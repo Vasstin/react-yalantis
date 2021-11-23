@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import User from "./Components/User";
+import Month from "./Components/Month";
 
 const Main = props => {
   const [users, usersSetState] = useState([])
@@ -20,9 +21,12 @@ const Main = props => {
         date = {item.dob}/>
     )
   })
-
+  
   return(
-    <div>{usersMap}</div>
+    <div>
+      <div>{usersMap}</div>
+      <Month />
+    </div>
   )
 };
 
