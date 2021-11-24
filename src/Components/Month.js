@@ -15,6 +15,7 @@ const UserMonth = styled.li`
   padding: 15px 15px;
   text-align: center;
   border: 1px solid black;
+  background-color: ${props => props.color};
 `;
 
 const Month = props => {
@@ -27,7 +28,8 @@ const Month = props => {
   const month = monthArray.map((item, index) => {
     return (
     <UserMonth 
-      key = {index} 
+      key = {index}
+      color = {props.monthColor[index]}
       onMouseEnter = {() => props.onGetMonthId(index)}
       onMouseLeave = {props.onClearMonthId}
     >{item}
