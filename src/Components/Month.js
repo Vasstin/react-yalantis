@@ -18,17 +18,20 @@ const UserMonth = styled.li`
 `;
 
 const Month = props => {
-  function monthClick(event) {
-    console.log(event.target.innerText)
-  }
-
+  
   const monthArray = [
     "January","February","March","April","May","June","July",
   "August","September","October","November","December"
   ]
   
-  const month = monthArray.map(item => {
-    return <UserMonth onClick = {monthClick}>{item}</UserMonth>
+  const month = monthArray.map((item, index) => {
+    return (
+    <UserMonth 
+      key = {index} 
+      onMouseEnter = {() => props.onGetMonthId(index)}
+      onMouseLeave = {props.onClearMonthId}
+    >{item}
+    </UserMonth>)
   })
 
   return(
